@@ -22,6 +22,10 @@ Both retailers' Shimano ranges with prices, matched to our catalogue. And — th
 the important part — enough detail per row that the pricing team can tell whether a
 cheap line is actually the same product we sell.
 
+**Cap it at about 300 products per retailer.** I am trying to understand a pattern,
+not build a catalogue — and if the pattern is real it will show up in the first few
+hundred.
+
 ## The two retailers
 
 | | Shop | Their Shimano range |

@@ -18,6 +18,9 @@ moment we are doing neither deliberately.
 Both retailers' Koch Chemie ranges with prices, in a form the pricing team can put
 beside our trade list. Per-product, not a summary.
 
+**About 300 products from each is plenty.** We only carry a slice of what they list
+anyway, so the overlap matters far more to me than the total.
+
 ## The two retailers
 
 | | Shop | Their range |

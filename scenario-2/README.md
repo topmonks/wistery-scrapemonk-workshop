@@ -22,6 +22,10 @@ Both shops' Rancilio ranges, priced, in a form the pricing team can compare line
 line against ours. I want to be able to say "we are X% over on these twelve items",
 not "customers say we're expensive".
 
+**Roughly 300 products per shop is enough.** This is for a decision next week, not an
+archive — if getting all of it takes all day, take the first few hundred and tell me
+that is what it is.
+
 ## The two we keep getting quoted against
 
 | | Shop | Their Rancilio range |

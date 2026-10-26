@@ -23,6 +23,10 @@ Their Doepfer range with prices, in something the pricing team can put **next to
 own list** — not a screenshot, not a PDF. Something they can actually join to our
 catalogue, module by module.
 
+I do not need every last thing they stock — **around 300 products from each shop** is
+plenty to settle the argument. I would rather have 300 rows I can trust than a complete
+dump nobody has checked.
+
 ## The two shops customers keep naming
 
 | | Shop | Their Doepfer range |

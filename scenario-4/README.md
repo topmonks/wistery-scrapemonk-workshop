@@ -21,6 +21,9 @@ say which.
 Both shops' BetaFPV-heavy ranges with prices, in a form the pricing team can line up
 against our own catalogue item by item.
 
+**About 300 products from each shop will do.** I want this before the weekend, so do
+not try to take their entire site — the BetaFPV range is the part under dispute.
+
 ## The two shops in every complaint
 
 | | Shop | Their range |

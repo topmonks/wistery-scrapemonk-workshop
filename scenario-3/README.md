@@ -21,6 +21,9 @@ Both retailers' Continental tyre ranges with prices, joined to our own list so t
 pricing team can see which specific sizes and models are the problem. A total average
 is useless here — it will be two or three hero products dragging the perception.
 
+**Around 300 products from each is fine.** The shops only care about the sizes they
+actually sell, so a focused few hundred beats a complete list we never read.
+
 ## The two retailers in question
 
 | | Shop | Their Continental range |

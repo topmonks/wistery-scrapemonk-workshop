@@ -47,9 +47,15 @@ we would rather hear it from you today than from a customer.
 
 ## You have about ninety minutes
 
-Both shops in your ticket run to a few hundred products, but these shops are far bigger
-than the range you were asked about and a crawl will happily keep going. **Cap it at
-roughly 300 pages** so you get to the interesting part — the data — inside the session.
+Your ticket asks for roughly **300 products from each shop**. That is a real business
+constraint and it is also all you have time for — both shops are far larger than the
+range you were asked about, and left alone a crawl will happily keep going.
+
+Mind the unit. A crawl is bounded in **pages**, and a page is not a product: listing
+pages, filters and pagination all count toward it. So "300 products" and "300 pages"
+are not the same instruction, and the gap between them is yours to work out. Check what
+you actually ended up with rather than assuming the number you asked for is the number
+you got.
 
 A capped catalogue is a partial one. That is fine. Saying it is complete when it is not
 is the thing that causes damage, so report what you actually have.

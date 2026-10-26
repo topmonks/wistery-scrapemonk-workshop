@@ -21,6 +21,9 @@ under us, procurement wants to know before committing.
 Both catalogues with prices, matched against ours so the pricing team can work item by
 item rather than on a blended average. Blended averages are how we got into this.
 
+**Around 300 products from each is enough** for procurement to act on. The order goes
+in regardless in two weeks, so a partial answer on time beats a perfect one after.
+
 ## The two specialists
 
 | | Shop | Their range |
