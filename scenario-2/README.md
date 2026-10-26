@@ -1,69 +1,33 @@
-# Scenario 2 — Kettle & Crank
+> **Scenario 2 — you work at Kettle & Crank** (Amsterdam, NL — espresso machines, grinders and parts).
+> This is the ticket as it landed from sales. Workshop rules and setup are in the
+> [root README](../README.md). Record anything you could not do in `FINDINGS.md`.
 
-**You work at Kettle & Crank** (Amsterdam, NL), a distributor of espresso machines, grinders and the parts that wear out.
+# PRICE-1144 — Rancilio: are we leaving money on the table?
 
-Kettle & Crank fits out small cafes. One British and one American retailer sell the same machines and parts, and the buying team has never checked whether the European price is competitive.
+**Raised by** Joost (Sales) · **For** Pricing · **Priority** High
 
-Your job: get both competitors' catalogues into TidyMonk so the pricing team can
-compare them against our own list.
+## Why I'm asking
 
-## The two competitors
+Three cafe fit-outs in a row this quarter, the owner has come back mid-quote saying
+they found the same Rancilio kit cheaper online. Twice they showed me a tab. I have no
+idea whether those were one-off clearance prices or whether we are simply dearer across
+the whole line.
 
-| | Shop | Start from this category |
+Rancilio is not a brand we can afford to be vague about — it is most of what goes into
+a two-group install, so the machine price sets the tone for the whole quote.
+
+## What I need
+
+Both shops' Rancilio ranges, priced, in a form the pricing team can compare line by
+line against ours. I want to be able to say "we are X% over on these twelve items",
+not "customers say we're expensive".
+
+## The two we keep getting quoted against
+
+| | Shop | Their Rancilio range |
 |---|---|---|
-| **A** | `theespressoshop.co.uk` — The Espresso Shop | `/collections/rancilio` (~108 products) |
-| **B** | `espressoparts.com` — Espresso Parts | `/collections/rancilio` (~250 products) |
+| **A** | The Espresso Shop | https://theespressoshop.co.uk/collections/rancilio (~108 products) |
+| **B** | Espresso Parts | https://espressoparts.com/collections/rancilio (~250 products) |
 
-Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
-carry thousands of products and you have ninety minutes.
-
-Two things to watch for, because neither announces itself:
-
-- The category is a **starting point, not a boundary**. The crawler follows links out
-  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
-  you asked and your "category" data is really a sample of the whole shop.
-- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
-  say so when you report numbers. A partial catalogue described as complete is worse
-  than no catalogue.
-
-Both categories are the same maker's machines and parts — **Rancilio** — so a like-for-like comparison
-is possible. Whether your data supports one is the thing to find out.
-
-## Rules
-
-**Everything through MCP.** Ask your agent. Do not open the ScrapeMonk web app to do
-the work, do not call the API with curl, do not touch the database. Looking at the web
-app to *check* a result is fine — doing the work there is not.
-
-If you want something and there is no tool for it, **write it in `FINDINGS.md`**. That
-list is half the point of today.
-
-## Done when
-
-- [ ] Both categories crawled and extracted
-- [ ] A CSV of each produced by ScrapeMonk and sitting in S3
-- [ ] You can answer, per shop: how many products, how many priced, **which currency**
-- [ ] You can say how many products appear in **both** catalogues, and on what basis
-      you matched them
-
-That last one is the real question. A row with a name, a price and a photo reads
-perfectly and matches nothing.
-
-## Worth knowing
-
-- **Creating a job is not the same as running one.** Creating it learns the site and
-  stops with an estimate. Starting it spends. Your agent should tell you which just
-  happened — if it does not, ask.
-- **Extraction asks before it runs.** The job stops at a preview so a person can look
-  at a sample first. Look at it properly — that preview is the cheapest moment to
-  catch a bad parse.
-- **Check the currency before comparing anything.** Not every shop prices in the same
-  one, and nothing in a spreadsheet will warn you.
-- If a job seems stuck, ask your agent what state it is in before restarting anything.
-- Both shops are on Shopify, which ScrapeMonk handles well. Neither has been crawled
-  before, so the first job on each will run discovery — about a minute.
-
-## Notes
-
-Write what surprised you here, especially anything where you knew what you wanted and
-could not get the agent to do it.
+Worth flagging: these two are not in the same market as each other, so do sanity-check
+the numbers before anyone builds a chart out of them.

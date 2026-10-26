@@ -1,69 +1,32 @@
-# Scenario 4 — Skyline FPV
+> **Scenario 4 — you work at Skyline FPV** (Prague, CZ — FPV motors, frames, cameras and flight controllers).
+> This is the ticket as it landed from sales. Workshop rules and setup are in the
+> [root README](../README.md). Record anything you could not do in `FINDINGS.md`.
 
-**You work at Skyline FPV** (Prague, CZ), a distributor of motors, flight controllers, frames and cameras for FPV pilots.
+# PRICE-3310 — BetaFPV: why are we always the expensive one?
 
-Skyline assembles and sells racing drones. Two US shops carry the same Chinese component brands, and customers routinely ask why Skyline costs more.
+**Raised by** Tomáš (Sales) · **For** Pricing · **Priority** High
 
-Your job: get both competitors' catalogues into TidyMonk so the pricing team can
-compare them against our own list.
+## Why I'm asking
 
-## The two competitors
+Every second support ticket that comes in about price mentions the same two US shops.
+Our builders are comparing us on BetaFPV parts specifically — that is the brand that
+shows up in the complaints, because it is what the ready-to-fly crowd buys.
 
-| | Shop | Start from this category |
+I want to stop guessing. Either we are competitive and our story is bad, or we are
+genuinely over and we need to talk to the buyer. Right now nobody in this building can
+say which.
+
+## What I need
+
+Both shops' BetaFPV-heavy ranges with prices, in a form the pricing team can line up
+against our own catalogue item by item.
+
+## The two shops in every complaint
+
+| | Shop | Their range |
 |---|---|---|
-| **A** | `racedayquads.com` — RaceDayQuads | `/collections/betafpv-products` (~181 products) |
-| **B** | `pyrodrone.com` — Pyrodrone | `/collections/cinewhoop-bnf` (~203 products) |
+| **A** | RaceDayQuads | https://racedayquads.com/collections/betafpv-products (~181 products) |
+| **B** | Pyrodrone | https://pyrodrone.com/collections/cinewhoop-bnf (~203 products) |
 
-Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
-carry thousands of products and you have ninety minutes.
-
-Two things to watch for, because neither announces itself:
-
-- The category is a **starting point, not a boundary**. The crawler follows links out
-  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
-  you asked and your "category" data is really a sample of the whole shop.
-- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
-  say so when you report numbers. A partial catalogue described as complete is worse
-  than no catalogue.
-
-Both categories are built around the same maker — **BetaFPV** — so a like-for-like comparison
-is possible. Whether your data supports one is the thing to find out.
-
-## Rules
-
-**Everything through MCP.** Ask your agent. Do not open the ScrapeMonk web app to do
-the work, do not call the API with curl, do not touch the database. Looking at the web
-app to *check* a result is fine — doing the work there is not.
-
-If you want something and there is no tool for it, **write it in `FINDINGS.md`**. That
-list is half the point of today.
-
-## Done when
-
-- [ ] Both categories crawled and extracted
-- [ ] A CSV of each produced by ScrapeMonk and sitting in S3
-- [ ] You can answer, per shop: how many products, how many priced, **which currency**
-- [ ] You can say how many products appear in **both** catalogues, and on what basis
-      you matched them
-
-That last one is the real question. A row with a name, a price and a photo reads
-perfectly and matches nothing.
-
-## Worth knowing
-
-- **Creating a job is not the same as running one.** Creating it learns the site and
-  stops with an estimate. Starting it spends. Your agent should tell you which just
-  happened — if it does not, ask.
-- **Extraction asks before it runs.** The job stops at a preview so a person can look
-  at a sample first. Look at it properly — that preview is the cheapest moment to
-  catch a bad parse.
-- **Check the currency before comparing anything.** Not every shop prices in the same
-  one, and nothing in a spreadsheet will warn you.
-- If a job seems stuck, ask your agent what state it is in before restarting anything.
-- Both shops are on Shopify, which ScrapeMonk handles well. Neither has been crawled
-  before, so the first job on each will run discovery — about a minute.
-
-## Notes
-
-Write what surprised you here, especially anything where you knew what you wanted and
-could not get the agent to do it.
+The number I care about is **how many products actually appear on both sides and on
+ours**. Two catalogues that never meet tell us nothing.

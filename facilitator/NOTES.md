@@ -11,7 +11,7 @@ an earlier draft paired "brake cables" against "26-inch tyres" and nothing match
 |---|---|---|---|---|---|---|
 | 1 | Modular Row | noisebug `/doepfer-modules` | 175 | nightlife-electronics `/doepfer` | 111 | 155 (88%) |
 | 2 | Kettle & Crank | theespressoshop `/rancilio` | 108 | espressoparts `/rancilio` | ~250 | 108 (100%) |
-| 3 | Tailwind Components | cambria-bike `/continental` | 210 | bicyclewarehouse `/continental-bike-tires` | 215 | 188 (89%) |
+| 3 | Tailwind Components | cambriabike `/continental` | 210 | bicyclewarehouse `/continental-bike-tires` | 215 | 188 (89%) |
 | 4 | Skyline FPV | racedayquads `/betafpv-products` | 181 | pyrodrone `/cinewhoop-bnf` | 203 | 164 (91%) |
 | 5 | Additiva Works | west3d `/bambu-bambu-lab-printer-accessories` | 187 | fabreeko `/bambu-labs` | 102 | 142 (75%) |
 | 6 | Northfell Cycles | contenderbicycles `/shimano` | 174 | theproscloset `/shimano` | 273 | 153 (87%) |
@@ -101,8 +101,30 @@ handled, but worth knowing if things look wrong tomorrow:
 - **`category_urls` seeds, it does not scope.** Asking for a 207-product category
   produced 901 pages — the crawler follows links out of the category. ScrapeMonk
   notices and raises a `scope_drift` event saying "100% of fetched pages are outside
-  the requested area". Worth pointing at: the product caught its own limitation, and
-  the brief asks them to look for it.
+  the requested area". **The briefs no longer point at this** — it is one of the things
+  they have to find in the event stream themselves. If nobody notices by the debrief,
+  ask who checked where their crawl actually went.
+
+## The briefs are tickets now, not instructions
+
+Each `scenario-N/README.md` is written as a ticket from a named salesperson — business
+context, a complaint, an ask. No crawl settings, no mention of events, no warning about
+currency. That is deliberate: the workflow we are actually testing is "paste the ticket
+to the agent and talk to it", which is how these arrive in real life.
+
+Everything mechanical moved to the root README: the MCP-only rule, setup, the ~300-page
+cap and the ninety-minute box, and a section saying plainly that they cannot see the
+server and the job's event stream is the ground truth.
+
+What the tickets deliberately do **not** say:
+- anything about currency (scenarios 2 and 7 say only "these are in different markets
+  from each other", which is a fair clue if they are reading carefully; scenario 1 says
+  nothing at all, and it is the CAD one)
+- anything about `scope_drift` or that the category will not hold the crawl
+- anything about the preview gate, or that creating a job is not the same as starting it
+
+Several tickets do ask for the overlap explicitly — "how many of their modules we carry
+too", "say what you matched on". That is the real deliverable and it is in-fiction.
 
 ## Questions worth asking in the debrief
 

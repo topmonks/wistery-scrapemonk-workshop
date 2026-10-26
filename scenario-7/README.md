@@ -1,69 +1,29 @@
-# Scenario 7 — Lustre Supply
+> **Scenario 7 — you work at Lustre Supply** (Dublin, IE — polishes, coatings, machines and consumables).
+> This is the ticket as it landed from sales. Workshop rules and setup are in the
+> [root README](../README.md). Record anything you could not do in `FINDINGS.md`.
 
-**You work at Lustre Supply** (Dublin, IE), a distributor of polishes, coatings, machines and consumables for detailing studios.
+# PRICE-1573 — Koch Chemie: margin under pressure
 
-Lustre sells to valeting businesses. One British and one American retailer carry the same German and Japanese chemical brands, and margins are under pressure.
+**Raised by** Aoife (Sales) · **For** Pricing · **Priority** High
 
-Your job: get both competitors' catalogues into TidyMonk so the pricing team can
-compare them against our own list.
+## Why I'm asking
 
-## The two competitors
+Two detailing studios have renegotiated on us this quarter, both citing online pricing
+on the Koch Chemie range. That line carries a lot of our margin, and if it is being
+undercut consistently we need to decide whether to hold price or hold volume. At the
+moment we are doing neither deliberately.
 
-| | Shop | Start from this category |
+## What I need
+
+Both retailers' Koch Chemie ranges with prices, in a form the pricing team can put
+beside our trade list. Per-product, not a summary.
+
+## The two retailers
+
+| | Shop | Their range |
 |---|---|---|
-| **A** | `slimsdetailing.co.uk` — Slim's Detailing | `/collections/koch-chemie` (~186 products) |
-| **B** | `carsupplieswarehouse.com` — Car Supplies Warehouse | `/collections/automotive-protection-products` (~127 products) |
+| **A** | Slim's Detailing | https://slimsdetailing.co.uk/collections/koch-chemie (~186 products) |
+| **B** | Car Supplies Warehouse | https://carsupplieswarehouse.com/collections/automotive-protection-products (~127 products) |
 
-Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
-carry thousands of products and you have ninety minutes.
-
-Two things to watch for, because neither announces itself:
-
-- The category is a **starting point, not a boundary**. The crawler follows links out
-  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
-  you asked and your "category" data is really a sample of the whole shop.
-- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
-  say so when you report numbers. A partial catalogue described as complete is worse
-  than no catalogue.
-
-Both categories carry the same German maker — **Koch Chemie** — so a like-for-like comparison
-is possible. Whether your data supports one is the thing to find out.
-
-## Rules
-
-**Everything through MCP.** Ask your agent. Do not open the ScrapeMonk web app to do
-the work, do not call the API with curl, do not touch the database. Looking at the web
-app to *check* a result is fine — doing the work there is not.
-
-If you want something and there is no tool for it, **write it in `FINDINGS.md`**. That
-list is half the point of today.
-
-## Done when
-
-- [ ] Both categories crawled and extracted
-- [ ] A CSV of each produced by ScrapeMonk and sitting in S3
-- [ ] You can answer, per shop: how many products, how many priced, **which currency**
-- [ ] You can say how many products appear in **both** catalogues, and on what basis
-      you matched them
-
-That last one is the real question. A row with a name, a price and a photo reads
-perfectly and matches nothing.
-
-## Worth knowing
-
-- **Creating a job is not the same as running one.** Creating it learns the site and
-  stops with an estimate. Starting it spends. Your agent should tell you which just
-  happened — if it does not, ask.
-- **Extraction asks before it runs.** The job stops at a preview so a person can look
-  at a sample first. Look at it properly — that preview is the cheapest moment to
-  catch a bad parse.
-- **Check the currency before comparing anything.** Not every shop prices in the same
-  one, and nothing in a spreadsheet will warn you.
-- If a job seems stuck, ask your agent what state it is in before restarting anything.
-- Both shops are on Shopify, which ScrapeMonk handles well. Neither has been crawled
-  before, so the first job on each will run discovery — about a minute.
-
-## Notes
-
-Write what surprised you here, especially anything where you knew what you wanted and
-could not get the agent to do it.
+These are in different markets from each other and from us, so please be explicit about
+what the figures in your output actually represent before pricing acts on them.

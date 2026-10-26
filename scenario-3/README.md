@@ -1,69 +1,32 @@
-# Scenario 3 — Tailwind Components
+> **Scenario 3 — you work at Tailwind Components** (Girona, ES — drivetrain, brake and wheel components).
+> This is the ticket as it landed from sales. Workshop rules and setup are in the
+> [root README](../README.md). Record anything you could not do in `FINDINGS.md`.
 
-**You work at Tailwind Components** (Girona, ES), a distributor of drivetrain, brake and wheel components for independent bike shops.
+# PRICE-0788 — Continental tyres: shop-direct pricing
 
-Tailwind supplies shops across Catalonia. Two large online retailers sell the same Continental tyres direct to riders, and shops keep quoting their prices back.
+**Raised by** Núria (Sales) · **For** Pricing · **Priority** Medium
 
-Your job: get both competitors' catalogues into TidyMonk so the pricing team can
-compare them against our own list.
+## Why I'm asking
 
-## The two competitors
+Our shops are getting beaten up by their own customers. Riders walk in with a phone
+showing a Continental tyre at a price our shop cannot match even at our trade rate,
+and the shop owner then rings me about it. I have had four of those calls this month.
 
-| | Shop | Start from this category |
+I need to know whether that is a handful of loss-leader SKUs or the whole Continental
+range sitting below us.
+
+## What I need
+
+Both retailers' Continental tyre ranges with prices, joined to our own list so the
+pricing team can see which specific sizes and models are the problem. A total average
+is useless here — it will be two or three hero products dragging the perception.
+
+## The two retailers in question
+
+| | Shop | Their Continental range |
 |---|---|---|
-| **A** | `cambria-bike.myshopify.com` — Cambria Bike | `/collections/continental` (~210 products) |
-| **B** | `bicyclewarehouse.com` — Bicycle Warehouse | `/collections/continental-bike-tires` (~215 products) |
+| **A** | Cambria Bike | https://cambriabike.com/collections/continental (~210 products) |
+| **B** | Bicycle Warehouse | https://bicyclewarehouse.com/collections/continental-bike-tires (~215 products) |
 
-Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
-carry thousands of products and you have ninety minutes.
-
-Two things to watch for, because neither announces itself:
-
-- The category is a **starting point, not a boundary**. The crawler follows links out
-  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
-  you asked and your "category" data is really a sample of the whole shop.
-- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
-  say so when you report numbers. A partial catalogue described as complete is worse
-  than no catalogue.
-
-Both categories are the same maker's tyres — **Continental** — so a like-for-like comparison
-is possible. Whether your data supports one is the thing to find out.
-
-## Rules
-
-**Everything through MCP.** Ask your agent. Do not open the ScrapeMonk web app to do
-the work, do not call the API with curl, do not touch the database. Looking at the web
-app to *check* a result is fine — doing the work there is not.
-
-If you want something and there is no tool for it, **write it in `FINDINGS.md`**. That
-list is half the point of today.
-
-## Done when
-
-- [ ] Both categories crawled and extracted
-- [ ] A CSV of each produced by ScrapeMonk and sitting in S3
-- [ ] You can answer, per shop: how many products, how many priced, **which currency**
-- [ ] You can say how many products appear in **both** catalogues, and on what basis
-      you matched them
-
-That last one is the real question. A row with a name, a price and a photo reads
-perfectly and matches nothing.
-
-## Worth knowing
-
-- **Creating a job is not the same as running one.** Creating it learns the site and
-  stops with an estimate. Starting it spends. Your agent should tell you which just
-  happened — if it does not, ask.
-- **Extraction asks before it runs.** The job stops at a preview so a person can look
-  at a sample first. Look at it properly — that preview is the cheapest moment to
-  catch a bad parse.
-- **Check the currency before comparing anything.** Not every shop prices in the same
-  one, and nothing in a spreadsheet will warn you.
-- If a job seems stuck, ask your agent what state it is in before restarting anything.
-- Both shops are on Shopify, which ScrapeMonk handles well. Neither has been crawled
-  before, so the first job on each will run discovery — about a minute.
-
-## Notes
-
-Write what surprised you here, especially anything where you knew what you wanted and
-could not get the agent to do it.
+Please tell me how many of their tyres we stock as well. Overlap is the whole point —
+if we only carry a third of what they list, that is a different conversation.
