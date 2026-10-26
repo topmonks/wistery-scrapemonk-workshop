@@ -9,8 +9,9 @@ data, driving ScrapeMonk entirely through its agent.
 gathers, **TidyMonk** cleanses, **MatchMonk** matches products across shops, **PriceMonk**
 turns that into a pricing strategy — which is the part they actually want. ScrapeMonk is
 second fiddle here, and getting the data **into S3** in a usable shape is the whole of
-our contribution. It is also the step that sinks the demo if it goes wrong, because
-nothing downstream can recover data that was never collected or never joinable.
+our contribution — Barbora takes it from S3 onward on the MatchMonk side. It is also
+the step that sinks the demo if it goes wrong, because nothing downstream can recover
+data that was never collected or never joinable.
 
 This is the workflow we are testing, not a tutorial. It is also the one we actually run
 every week: the ticket arrives written for humans, nobody rewrites it into technical

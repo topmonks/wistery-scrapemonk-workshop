@@ -3,8 +3,6 @@
 
 # DEMO-1144 — Kettle & Crank: demo data for the Rancilio comparison
 
-**Raised by** Joost (Sales) · **For** Delivery · **Demo is Thursday**
-
 ## Who they are
 
 Kettle & Crank are an Amsterdam wholesaler fitting out cafes — machines, grinders,
@@ -40,8 +38,12 @@ ScrapeMonk → **TidyMonk** to cleanse → **MatchMonk** to match products acros
 shops → PriceMonk for the strategy.
 
 Our job here is the first step, and the handoff: both ranges extracted and **landed in
-S3** in a shape the rest of the chain can pick up. ScrapeMonk is playing second fiddle
-in this demo and that is fine — but if this step is wrong, nothing downstream recovers.
+S3**. **Barbora picks it up from there** on the MatchMonk side — the S3 file is where
+our part ends and hers begins, so it needs to be something she can work with rather
+than something she has to come back and ask about.
+
+ScrapeMonk is playing second fiddle in this demo and that is fine — but if this step is
+wrong, nothing downstream recovers.
 
 ## What matters about the data
 
