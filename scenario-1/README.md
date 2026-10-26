@@ -1,57 +1,36 @@
-> **Scenario 1** — you are preparing the demo. Workshop rules and setup are in the
-> [root README](../README.md). Record anything you could not do in `FINDINGS.md`.
+# Scenario 1 — Modular Row
 
-# DEMO-2291 — Modular Row: demo data for the Doepfer comparison
+**Prospect.** Modular Row, Berlin — Eurorack modules and cases. Met at Superbooth,
+several calls since. Before committing they want a demo built on their own market
+rather than a slide.
 
-## Who they are
+**What they asked for.** A like-for-like price comparison on the **Doepfer** line,
+using the two competitors they named. They are losing studio accounts to US shops and
+cannot quantify the gap. Doepfer is the line they are most exposed on.
 
-Modular Row are a Eurorack distributor out of Berlin — modules, cases, the boutique
-end. We met them at Superbooth and have had three calls since. They are interested but
-not convinced — they have been pitched competitor monitoring before and it came back
-as a spreadsheet nobody could use.
+## Sites to pull
 
-They are losing studio accounts to US shops and cannot say by how much. The founder
-told me on the second call that every price discussion they have is based on two
-screenshots somebody took months ago.
-
-## What they asked for
-
-They do not want a slide about what we could do. They asked to see **their own market,
-with real numbers**, using the two competitors they named on the last call. If we can
-show them a like-for-like comparison on a line that actually hurts, we win this.
-
-They want to see their Doepfer line specifically — it is the one they are most exposed
-on, so it is the one that will land.
-
-## The two sites they named
-
-| | Shop | Range to pull |
+| | Shop | Range |
 |---|---|---|
 | **A** | Noisebug | https://noisebug.net/collections/doepfer-modules (~175 products) |
 | **B** | Nightlife Electronics | https://nightlife-electronics.com/collections/doepfer (~111 products) |
 
+Around **300 products from each** is enough. This is a demo, not a delivery.
+
 ## Where this sits
 
-The prospect is buying the end of the pipeline, not our bit. What they want is
-**PriceMonk** telling them where to move their prices. To get there the data goes
-ScrapeMonk → **TidyMonk** to cleanse → **MatchMonk** to match products across the two
-shops → PriceMonk for the strategy.
+ScrapeMonk gathers → TidyMonk cleanses → MatchMonk matches → PriceMonk produces the
+pricing strategy, which is what they are buying. Our step is the gathering and the
+handoff: both ranges extracted and **landed in S3**.
 
-Our job here is the first step, and the handoff: both ranges extracted and **landed in
-S3**, in a shape the MatchMonk side can pick up without coming back to ask. ScrapeMonk
-is playing second fiddle in this demo and that is fine — but if this step is wrong,
-nothing downstream recovers.
+## What to report back
 
-## What matters about the data
+Per shop: how many products, how many priced, which currency, and **how many rows
+carry something MatchMonk could join on** — a GTIN or EAN, a manufacturer part number,
+a brand plus model. Not the product name.
 
-MatchMonk can only join products on something stable — a GTIN or EAN, a manufacturer
-part number, a brand plus a model. Not a product name. So the question to answer before
-the demo is not "did you get the rows", it is **can these rows actually be matched**:
-how many carry an identifier, and which field is it.
+You are not matching the products; that is MatchMonk's job. You are answering whether
+it could. If a lot of rows have nothing to join on, that is the finding — say it.
 
-If a large share of the rows have nothing to join on, say so now. That is a far better
-conversation to have with us than with the client, halfway through the demo.
-
-**Around 300 products from each shop is plenty.** This is a demo, not a delivery. I
-would rather have 300 rows that hold up under questioning than a full dump nobody has
-checked — they *will* ask where a number came from.
+Workshop rules and setup: [root README](../README.md). Anything you could not do
+through the agent goes in `FINDINGS.md`.

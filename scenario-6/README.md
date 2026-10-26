@@ -1,57 +1,37 @@
-> **Scenario 6** — you are preparing the demo. Workshop rules and setup are in the
-> [root README](../README.md). Record anything you could not do in `FINDINGS.md`.
+# Scenario 6 — Northfell Cycles
 
-# DEMO-2050 — Northfell Cycles: demo data for the Shimano drivetrain comparison
+**Prospect.** Northfell Cycles, Trondheim — suspension, headsets and drivetrain parts.
+Met at Core Bike, several calls since. Before committing they want a demo built on
+their own market rather than a slide.
 
-## Who they are
+**What they asked for.** A like-for-like price comparison on the **Shimano
+drivetrain** line, using the two competitors they named. Customers quote them prices
+that cannot be new stock. They suspect they are being compared against pre-owned parts
+but cannot show it.
 
-Northfell Cycles are a Trondheim workshop and webshop — suspension, headsets,
-drivetrain. We met them at Core Bike and have had three calls since. They are
-interested but not convinced — they have been pitched competitor monitoring before and
-it came back as a spreadsheet nobody could use.
+## Sites to pull
 
-Customers quote them prices that cannot be new-stock prices. They suspect they are
-being compared against pre-owned and take-off parts but have never been able to show
-it.
-
-## What they asked for
-
-They do not want a slide about what we could do. They asked to see **their own market,
-with real numbers**, using the two competitors they named on the last call. If we can
-show them a like-for-like comparison on a line that actually hurts, we win this.
-
-One of those two sells a lot of pre-owned stock. If the data can make that visible,
-that alone is the demo.
-
-## The two sites they named
-
-| | Shop | Range to pull |
+| | Shop | Range |
 |---|---|---|
 | **A** | Contender Bicycles | https://contenderbicycles.com/collections/shimano (~174 products) |
 | **B** | The Pro's Closet | https://theproscloset.com/collections/shimano (~273 products) |
 
+Around **300 products from each** is enough. This is a demo, not a delivery.
+
 ## Where this sits
 
-The prospect is buying the end of the pipeline, not our bit. What they want is
-**PriceMonk** telling them where to move their prices. To get there the data goes
-ScrapeMonk → **TidyMonk** to cleanse → **MatchMonk** to match products across the two
-shops → PriceMonk for the strategy.
+ScrapeMonk gathers → TidyMonk cleanses → MatchMonk matches → PriceMonk produces the
+pricing strategy, which is what they are buying. Our step is the gathering and the
+handoff: both ranges extracted and **landed in S3**.
 
-Our job here is the first step, and the handoff: both ranges extracted and **landed in
-S3**, in a shape the MatchMonk side can pick up without coming back to ask. ScrapeMonk
-is playing second fiddle in this demo and that is fine — but if this step is wrong,
-nothing downstream recovers.
+## What to report back
 
-## What matters about the data
+Per shop: how many products, how many priced, which currency, and **how many rows
+carry something MatchMonk could join on** — a GTIN or EAN, a manufacturer part number,
+a brand plus model. Not the product name.
 
-MatchMonk can only join products on something stable — a GTIN or EAN, a manufacturer
-part number, a brand plus a model. Not a product name. So the question to answer before
-the demo is not "did you get the rows", it is **can these rows actually be matched**:
-how many carry an identifier, and which field is it.
+You are not matching the products; that is MatchMonk's job. You are answering whether
+it could. If a lot of rows have nothing to join on, that is the finding — say it.
 
-If a large share of the rows have nothing to join on, say so now. That is a far better
-conversation to have with us than with the client, halfway through the demo.
-
-**Around 300 products from each shop is plenty.** This is a demo, not a delivery. I
-would rather have 300 rows that hold up under questioning than a full dump nobody has
-checked — they *will* ask where a number came from.
+Workshop rules and setup: [root README](../README.md). Anything you could not do
+through the agent goes in `FINDINGS.md`.
