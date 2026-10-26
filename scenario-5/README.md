@@ -2,7 +2,7 @@
 
 **You work at Additiva Works** (Rotterdam, NL), a distributor of hotends, extruders, motion parts and upgrades for print farms.
 
-Additiva keeps print farms running. Two US specialists stock the same Bondtech and E3D parts, and procurement wants a like-for-like comparison before the next order.
+Additiva keeps print farms running. Two US specialists stock the same Bambu Lab accessories, and procurement wants a like-for-like comparison before the next order.
 
 Your job: get both competitors' catalogues into TidyMonk so the pricing team can
 compare them against our own list.
@@ -11,13 +11,22 @@ compare them against our own list.
 
 | | Shop | Start from this category |
 |---|---|---|
-| **A** | `west3d.com` — West3D | `/collections/bambu-bambu-lab-printer-accessories` (~190 products) |
-| **B** | `fabreeko.com` — Fabreeko | `/collections/voron` (~186 products) |
+| **A** | `west3d.com` — West3D | `/collections/bambu-bambu-lab-printer-accessories` (~187 products) |
+| **B** | `fabreeko.com` — Fabreeko | `/collections/bambu-labs` (~102 products) |
 
-Crawl **the category, not the whole shop**. Both shops carry thousands of products
-and you have ninety minutes. Scoping the crawl is part of the job.
+Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
+carry thousands of products and you have ninety minutes.
 
-These two genuinely stock the same brands — Bambu Lab, BIQU, Bondtech, BTT, E3D, LDO among others — so a comparison
+Two things to watch for, because neither announces itself:
+
+- The category is a **starting point, not a boundary**. The crawler follows links out
+  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
+  you asked and your "category" data is really a sample of the whole shop.
+- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
+  say so when you report numbers. A partial catalogue described as complete is worse
+  than no catalogue.
+
+Both categories cover the same makers — **Bambu Lab**, with some BTT and Phaetus — so a like-for-like comparison
 is possible. Whether your data supports one is the thing to find out.
 
 ## Rules

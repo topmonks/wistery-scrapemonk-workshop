@@ -2,7 +2,7 @@
 
 **You work at Kettle & Crank** (Amsterdam, NL), a distributor of espresso machines, grinders and the parts that wear out.
 
-Kettle & Crank fits out small cafes. Two large US retailers sell the same machines and grinders, and the buying team has never checked whether the European price is competitive.
+Kettle & Crank fits out small cafes. One British and one American retailer sell the same machines and parts, and the buying team has never checked whether the European price is competitive.
 
 Your job: get both competitors' catalogues into TidyMonk so the pricing team can
 compare them against our own list.
@@ -11,13 +11,22 @@ compare them against our own list.
 
 | | Shop | Start from this category |
 |---|---|---|
-| **A** | `seattlecoffeegear.com` — Seattle Coffee Gear | `/collections/rocket-espresso` (~185 products) |
-| **B** | `wholelattelove.com` — Whole Latte Love | `/collections/all-purpose-coffee-and-espresso-grinders` (~162 products) |
+| **A** | `theespressoshop.co.uk` — The Espresso Shop | `/collections/rancilio` (~108 products) |
+| **B** | `espressoparts.com` — Espresso Parts | `/collections/rancilio` (~250 products) |
 
-Crawl **the category, not the whole shop**. Both shops carry thousands of products
-and you have ninety minutes. Scoping the crawl is part of the job.
+Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
+carry thousands of products and you have ninety minutes.
 
-These two genuinely stock the same brands — Bialetti, Breville, DeLonghi, Eureka, Rancilio among others — so a comparison
+Two things to watch for, because neither announces itself:
+
+- The category is a **starting point, not a boundary**. The crawler follows links out
+  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
+  you asked and your "category" data is really a sample of the whole shop.
+- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
+  say so when you report numbers. A partial catalogue described as complete is worse
+  than no catalogue.
+
+Both categories are the same maker's machines and parts — **Rancilio** — so a like-for-like comparison
 is possible. Whether your data supports one is the thing to find out.
 
 ## Rules

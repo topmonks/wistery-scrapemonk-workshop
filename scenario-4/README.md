@@ -11,13 +11,22 @@ compare them against our own list.
 
 | | Shop | Start from this category |
 |---|---|---|
-| **A** | `racedayquads.com` — RaceDayQuads | `/collections/betafpv-products` (~203 products) |
-| **B** | `pyrodrone.com` — Pyrodrone | `/collections/cinewhoop-bnf` (~207 products) |
+| **A** | `racedayquads.com` — RaceDayQuads | `/collections/betafpv-products` (~181 products) |
+| **B** | `pyrodrone.com` — Pyrodrone | `/collections/cinewhoop-bnf` (~203 products) |
 
-Crawl **the category, not the whole shop**. Both shops carry thousands of products
-and you have ninety minutes. Scoping the crawl is part of the job.
+Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
+carry thousands of products and you have ninety minutes.
 
-These two genuinely stock the same brands — AxisFlying, BetaFPV, Caddx, CNHL, Foxeer, T-Motor among others — so a comparison
+Two things to watch for, because neither announces itself:
+
+- The category is a **starting point, not a boundary**. The crawler follows links out
+  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
+  you asked and your "category" data is really a sample of the whole shop.
+- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
+  say so when you report numbers. A partial catalogue described as complete is worse
+  than no catalogue.
+
+Both categories are built around the same maker — **BetaFPV** — so a like-for-like comparison
 is possible. Whether your data supports one is the thing to find out.
 
 ## Rules

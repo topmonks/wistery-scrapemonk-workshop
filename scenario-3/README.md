@@ -2,7 +2,7 @@
 
 **You work at Tailwind Components** (Girona, ES), a distributor of drivetrain, brake and wheel components for independent bike shops.
 
-Tailwind supplies shops across Catalonia. Two large online retailers sell the same Shimano and SRAM parts direct to riders, and shops keep quoting their prices back.
+Tailwind supplies shops across Catalonia. Two large online retailers sell the same Continental tyres direct to riders, and shops keep quoting their prices back.
 
 Your job: get both competitors' catalogues into TidyMonk so the pricing team can
 compare them against our own list.
@@ -11,13 +11,22 @@ compare them against our own list.
 
 | | Shop | Start from this category |
 |---|---|---|
-| **A** | `cambria-bike.myshopify.com` — Cambria Bike | `/collections/mtb-road-brake-cables` (~192 products) |
-| **B** | `bicyclewarehouse.com` — Bicycle Warehouse | `/collections/26-inch-bike-tires` (~194 products) |
+| **A** | `cambria-bike.myshopify.com` — Cambria Bike | `/collections/continental` (~210 products) |
+| **B** | `bicyclewarehouse.com` — Bicycle Warehouse | `/collections/continental-bike-tires` (~215 products) |
 
-Crawl **the category, not the whole shop**. Both shops carry thousands of products
-and you have ninety minutes. Scoping the crawl is part of the job.
+Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
+carry thousands of products and you have ninety minutes.
 
-These two genuinely stock the same brands — Abus, Cane Creek, Continental, DT Swiss, Maxxis, Shimano among others — so a comparison
+Two things to watch for, because neither announces itself:
+
+- The category is a **starting point, not a boundary**. The crawler follows links out
+  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
+  you asked and your "category" data is really a sample of the whole shop.
+- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
+  say so when you report numbers. A partial catalogue described as complete is worse
+  than no catalogue.
+
+Both categories are the same maker's tyres — **Continental** — so a like-for-like comparison
 is possible. Whether your data supports one is the thing to find out.
 
 ## Rules

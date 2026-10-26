@@ -2,7 +2,7 @@
 
 **You work at Modular Row** (Berlin, DE), a distributor of Eurorack modules and cases for electronic musicians.
 
-Modular Row buys from the same boutique makers as everyone else and resells across Europe. Two US retailers dominate the online market and the founder wants to know how far off their pricing is.
+Modular Row buys from the same boutique makers as everyone else and resells across Europe. Two North American retailers dominate the online market and the founder wants to know how far off their pricing is.
 
 Your job: get both competitors' catalogues into TidyMonk so the pricing team can
 compare them against our own list.
@@ -11,13 +11,22 @@ compare them against our own list.
 
 | | Shop | Start from this category |
 |---|---|---|
-| **A** | `detroitmodular.com` — Detroit Modular | `/collections/midi-cv` (~233 products) |
-| **B** | `noisebug.net` — Noisebug | `/collections/doepfer-modules` (~191 products) |
+| **A** | `noisebug.net` — Noisebug | `/collections/doepfer-modules` (~175 products) |
+| **B** | `nightlife-electronics.com` — Nightlife Electronics | `/collections/doepfer` (~111 products) |
 
-Crawl **the category, not the whole shop**. Both shops carry thousands of products
-and you have ninety minutes. Scoping the crawl is part of the job.
+Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
+carry thousands of products and you have ninety minutes.
 
-These two genuinely stock the same brands — 4ms, ALM, Arturia, Doepfer, Intellijel, Make Noise among others — so a comparison
+Two things to watch for, because neither announces itself:
+
+- The category is a **starting point, not a boundary**. The crawler follows links out
+  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
+  you asked and your "category" data is really a sample of the whole shop.
+- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
+  say so when you report numbers. A partial catalogue described as complete is worse
+  than no catalogue.
+
+Both categories are the same maker's modules — **Doepfer** — so a like-for-like comparison
 is possible. Whether your data supports one is the thing to find out.
 
 ## Rules

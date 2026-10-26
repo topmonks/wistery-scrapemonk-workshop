@@ -11,13 +11,22 @@ compare them against our own list.
 
 | | Shop | Start from this category |
 |---|---|---|
-| **A** | `slimsdetailing.co.uk` — Slim's Detailing | `/collections/koch-chemie` (~194 products) |
-| **B** | `carsupplieswarehouse.com` — Car Supplies Warehouse | `/collections/automotive-protection-products` (~197 products) |
+| **A** | `slimsdetailing.co.uk` — Slim's Detailing | `/collections/koch-chemie` (~186 products) |
+| **B** | `carsupplieswarehouse.com` — Car Supplies Warehouse | `/collections/automotive-protection-products` (~127 products) |
 
-Crawl **the category, not the whole shop**. Both shops carry thousands of products
-and you have ninety minutes. Scoping the crawl is part of the job.
+Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
+carry thousands of products and you have ninety minutes.
 
-These two genuinely stock the same brands — Bilt Hamber, CarPro, Flex, Gtechniq, Kärcher among others — so a comparison
+Two things to watch for, because neither announces itself:
+
+- The category is a **starting point, not a boundary**. The crawler follows links out
+  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
+  you asked and your "category" data is really a sample of the whole shop.
+- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
+  say so when you report numbers. A partial catalogue described as complete is worse
+  than no catalogue.
+
+Both categories carry the same German maker — **Koch Chemie** — so a like-for-like comparison
 is possible. Whether your data supports one is the thing to find out.
 
 ## Rules

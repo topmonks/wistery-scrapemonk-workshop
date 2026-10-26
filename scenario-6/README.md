@@ -2,7 +2,7 @@
 
 **You work at Northfell Cycles** (Trondheim, NO), a distributor of suspension, headsets and drivetrain parts for mountain bikes.
 
-Northfell runs a workshop and a small webshop. Two very different retailers — one Asian, one American — sell the same suspension and headset parts.
+Northfell runs a workshop and a small webshop. Two very different American retailers — one new-parts, one largely pre-owned — sell the same drivetrain parts.
 
 Your job: get both competitors' catalogues into TidyMonk so the pricing team can
 compare them against our own list.
@@ -11,13 +11,22 @@ compare them against our own list.
 
 | | Shop | Start from this category |
 |---|---|---|
-| **A** | `chapter-2-cycle.myshopify.com` — Chapter 2 Cycle | `/collections/brake-shoes-brake-set` (~185 products) |
-| **B** | `worldwidecyclery.com` — Worldwide Cyclery | `/collections/air-springs-parts` (~207 products) |
+| **A** | `contenderbicycles.com` — Contender Bicycles | `/collections/shimano` (~174 products) |
+| **B** | `theproscloset.com` — The Pro's Closet | `/collections/shimano` (~273 products) |
 
-Crawl **the category, not the whole shop**. Both shops carry thousands of products
-and you have ninety minutes. Scoping the crawl is part of the job.
+Seed the crawl from **that category**, and **cap it at about 300 pages**. Both shops
+carry thousands of products and you have ninety minutes.
 
-These two genuinely stock the same brands — Continental, DT Swiss, Fizik, Galfer, Jagwire among others — so a comparison
+Two things to watch for, because neither announces itself:
+
+- The category is a **starting point, not a boundary**. The crawler follows links out
+  of it. Check the job's events — if it says `scope_drift`, your crawl went wider than
+  you asked and your "category" data is really a sample of the whole shop.
+- Capping the crawl means your catalogue is **partial**. That is fine, as long as you
+  say so when you report numbers. A partial catalogue described as complete is worse
+  than no catalogue.
+
+Both categories are the same maker's parts — **Shimano** — so a like-for-like comparison
 is possible. Whether your data supports one is the thing to find out.
 
 ## Rules
