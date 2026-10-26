@@ -1,8 +1,10 @@
 # Scenario 6 — Northfell Cycles
 
-**Prospect.** Northfell Cycles, Trondheim — suspension, headsets and drivetrain parts.
-Met at Core Bike, several calls since. Before committing they want a demo built on
-their own market rather than a slide.
+**The prospect is invented for this exercise.** Northfell Cycles — a workshop and
+webshop selling suspension, headsets and drivetrain parts. They want to see a demo
+built on their own market before they commit; they have been pitched competitor
+monitoring before and got back a spreadsheet nobody could use. The two competitor
+shops below are real, and so is their data.
 
 **What they asked for.** A like-for-like price comparison on the **Shimano
 drivetrain** line, using the two competitors they named. Customers quote them prices

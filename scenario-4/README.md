@@ -1,8 +1,10 @@
 # Scenario 4 — Skyline FPV
 
-**Prospect.** Skyline FPV, Prague — FPV motors, frames, cameras and flight
-controllers. Met at DroneX, several calls since. Before committing they want a demo
-built on their own market rather than a slide.
+**The prospect is invented for this exercise.** Skyline FPV — a distributor of FPV
+motors, frames, cameras and flight controllers. They want to see a demo built on their
+own market before they commit; they have been pitched competitor monitoring before and
+got back a spreadsheet nobody could use. The two competitor shops below are real, and
+so is their data.
 
 **What they asked for.** A like-for-like price comparison on the **BetaFPV** line,
 using the two competitors they named. Their support queue is full of customers quoting

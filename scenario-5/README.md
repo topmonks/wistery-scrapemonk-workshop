@@ -1,8 +1,10 @@
 # Scenario 5 — Additiva Works
 
-**Prospect.** Additiva Works, Rotterdam — hotends, extruders and motion parts for
-print farms. Met at Formnext, several calls since. Before committing they want a demo
-built on their own market rather than a slide.
+**The prospect is invented for this exercise.** Additiva Works — a supplier keeping
+print farms running with hotends, extruders and motion parts. They want to see a demo
+built on their own market before they commit; they have been pitched competitor
+monitoring before and got back a spreadsheet nobody could use. The two competitor
+shops below are real, and so is their data.
 
 **What they asked for.** A like-for-like price comparison on the **Bambu Lab
 accessories** line, using the two competitors they named. Procurement places an order

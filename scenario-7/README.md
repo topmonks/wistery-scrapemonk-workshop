@@ -1,8 +1,10 @@
 # Scenario 7 — Lustre Supply
 
-**Prospect.** Lustre Supply, Dublin — polishes, coatings, machines and consumables for
-detailing studios. Met at Waxstock, several calls since. Before committing they want a
-demo built on their own market rather than a slide.
+**The prospect is invented for this exercise.** Lustre Supply — a distributor serving
+detailing studios with polishes, coatings, machines and consumables. They want to see
+a demo built on their own market before they commit; they have been pitched competitor
+monitoring before and got back a spreadsheet nobody could use. The two competitor
+shops below are real, and so is their data.
 
 **What they asked for.** A like-for-like price comparison on the **Koch Chemie** line,
 using the two competitors they named. Two studios renegotiated this quarter citing

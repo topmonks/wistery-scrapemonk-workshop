@@ -1,8 +1,10 @@
 # Scenario 3 — Tailwind Components
 
-**Prospect.** Tailwind Components, Girona — drivetrain, brake and wheel components for
-independent bike shops. Met at Sea Otter Europe, several calls since. Before
-committing they want a demo built on their own market rather than a slide.
+**The prospect is invented for this exercise.** Tailwind Components — a distributor
+supplying independent bike shops with drivetrain, brake and wheel parts. They want to
+see a demo built on their own market before they commit; they have been pitched
+competitor monitoring before and got back a spreadsheet nobody could use. The two
+competitor shops below are real, and so is their data.
 
 **What they asked for.** A like-for-like price comparison on the **Continental tyres**
 line, using the two competitors they named. Their shops are undercut by walk-in

@@ -1,8 +1,10 @@
 # Scenario 1 — Modular Row
 
-**Prospect.** Modular Row, Berlin — Eurorack modules and cases. Met at Superbooth,
-several calls since. Before committing they want a demo built on their own market
-rather than a slide.
+**The prospect is invented for this exercise.** Modular Row — a distributor of
+Eurorack modules and cases. They want to see a demo built on their own market before
+they commit; they have been pitched competitor monitoring before and got back a
+spreadsheet nobody could use. The two competitor shops below are real, and so is their
+data.
 
 **What they asked for.** A like-for-like price comparison on the **Doepfer** line,
 using the two competitors they named. They are losing studio accounts to US shops and

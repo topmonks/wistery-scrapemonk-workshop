@@ -1,8 +1,10 @@
 # Scenario 2 — Kettle & Crank
 
-**Prospect.** Kettle & Crank, Amsterdam — espresso machines, grinders and spares for
-cafe fit-outs. Met at World of Coffee, several calls since. Before committing they
-want a demo built on their own market rather than a slide.
+**The prospect is invented for this exercise.** Kettle & Crank — a wholesaler fitting
+out cafes with espresso machines, grinders and spares. They want to see a demo built
+on their own market before they commit; they have been pitched competitor monitoring
+before and got back a spreadsheet nobody could use. The two competitor shops below are
+real, and so is their data.
 
 **What they asked for.** A like-for-like price comparison on the **Rancilio** line,
 using the two competitors they named. Three fit-outs this quarter were renegotiated
