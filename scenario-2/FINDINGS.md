@@ -1,4 +1,4 @@
-# Findings — Scenario 2, Kettle & Crank
+# Findings — Scenario 2, Brackenside Plant
 
 ## Things I wanted to do and could not
 
@@ -10,4 +10,4 @@
 
 ## Data quality notes
 
-- 
+-

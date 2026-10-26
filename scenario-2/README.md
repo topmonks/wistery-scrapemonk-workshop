@@ -1,24 +1,23 @@
-# Scenario 2 — Kettle & Crank
+# Scenario 2 — Brackenside Plant
 
-**The prospect is invented for this exercise.** Kettle & Crank — a wholesaler fitting
-out cafes with espresso machines, grinders and spares. They want to see a demo built
-on their own market before they commit; they have been pitched competitor monitoring
-before and got back a spreadsheet nobody could use. The two competitor shops below are
-real, and so is their data.
+**The prospect is invented for this exercise.** Brackenside Plant — a UK maintenance
+contractor that keeps groundscare and light plant machinery running for councils and
+estates. They buy consumables and replacement components from specialist suppliers and
+want to see a demo built on their own buying before they commit. The two shops below
+are real, and so is their data.
 
-**What they asked for.** A like-for-like price comparison on the **Rancilio** line,
-using the two competitors they named. Three fit-outs this quarter were renegotiated
-mid-quote on online pricing. Rancilio is most of a two-group install, so it sets the
-tone for the whole quote.
+**What they asked for.** Current prices from the two suppliers they buy most from. The
+ranges are different — one is cutting gear, the other is drive components — so this is
+two separate price lists, not a like-for-like comparison.
 
 ## Sites to pull
 
 | | Shop | Range |
 |---|---|---|
-| **A** | The Espresso Shop | https://theespressoshop.co.uk/collections/rancilio (~108 products) |
-| **B** | Espresso Parts | https://espressoparts.com/collections/rancilio (~250 products) |
+| **A** | Chainsaw Bars | https://www.chainsawbars.co.uk/collections/all |
+| **B** | Simply Bearings | https://simplybearings.co.uk/ |
 
-Around **300 products from each** is enough. This is a demo, not a delivery.
+Around **200 products from each** is enough. This is a demo, not a delivery.
 
 ## Where this sits
 
@@ -28,12 +27,13 @@ handoff: both ranges extracted and **landed in S3**.
 
 ## What to report back
 
-Per shop: how many products, how many priced, which currency, and **how many rows
-carry something MatchMonk could join on** — a GTIN or EAN, a manufacturer part number,
-a brand plus model. Not the product name.
+Per shop: how many products you got, how many of them carry a price, and which
+currency. Then say whether you would hand this on as it stands.
 
-You are not matching the products; that is MatchMonk's job. You are answering whether
-it could. If a lot of rows have nothing to join on, that is the finding — say it.
+## Worth a look
+
+Shop B is a very large catalogue — far more than you are being asked for. Decide what
+you point the crawl at, and be able to say what you got and what you left behind.
 
 Workshop rules and setup: [root README](../README.md). Anything you could not do
 through the agent goes in `FINDINGS.md`.

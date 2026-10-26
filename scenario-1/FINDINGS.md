@@ -1,4 +1,4 @@
-# Findings — Scenario 1, Modular Row
+# Findings — Scenario 1, Fairlawn Supply
 
 ## Things I wanted to do and could not
 
@@ -10,4 +10,4 @@
 
 ## Data quality notes
 
-- 
+-
