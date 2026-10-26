@@ -116,6 +116,30 @@ crawlers across users with active jobs, capped by `MAX_WORKERS` (20 on dev). Sev
 premium participants ask for 70 crawler slots, which saturates the cap — fine, but
 expect queueing at the start when everybody launches at once.
 
+## Two jobs on the same shop, same person, at the same time
+
+Measured 2026-10-27, and the one thing to watch for.
+
+Jobs are matched to a learned site by `(user, domain)`. When a second job starts on a
+domain whose discovery is still running, it is *attached* to that in-flight discovery
+rather than starting its own — sensible, since learning one site four times is waste.
+But when discovery completes, **only the job that owns it is started.** The attached
+ones are left at `crawlerStatus: pending`, `analysisStatus: new`, with no queued URLs
+and no events, and they stay that way forever.
+
+Test: four jobs, one user, one shop, started seconds apart. The first crawled to
+completion (78 pages, 51 products). The other three never moved — `updatedAt` frozen at
+their creation timestamp.
+
+**This does not affect the normal workshop run.** Agents are per user, so eight people
+crawling the same shop get eight separate agents and eight independent discoveries. And
+each person's two jobs are on two different shops, so they cannot collide either.
+
+**It bites on a retry.** If somebody's job looks stuck and they start a second job on
+the *same shop* while the first is still discovering, the new one hangs silently. The
+fix in the room is to use the existing job rather than start another, and if one is
+already stuck, delete it and start one job.
+
 ## What will go wrong
 
 - **Tools missing after `claude mcp add`.** MCP registers at session start. They must
