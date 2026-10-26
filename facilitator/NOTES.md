@@ -107,10 +107,20 @@ handled, but worth knowing if things look wrong tomorrow:
 
 ## The briefs are tickets now, not instructions
 
-Each `scenario-N/README.md` is written as a ticket from a named salesperson — business
-context, a complaint, an ask. No crawl settings, no mention of events, no warning about
-currency. That is deliberate: the workflow we are actually testing is "paste the ticket
-to the agent and talk to it", which is how these arrive in real life.
+Each `scenario-N/README.md` is a ticket from **our** sales team about a prospect: met
+at a trade show, three calls in, interested but unconvinced, now asking for a demo
+built on their real competitors' data. Same shape every time, so nobody gets an easier
+scenario than anybody else. No crawl settings, no mention of events, no warning about
+currency. The workflow being tested is "paste the ticket to the agent and talk to it",
+which is how these actually arrive.
+
+**The pipeline framing matters.** Every ticket says plainly that the prospect is buying
+PriceMonk, and that the chain is ScrapeMonk → TidyMonk → MatchMonk → PriceMonk. Our
+step is gathering and the S3 handoff. This is deliberate: it moves the deliverable from
+"did you match the products" (MatchMonk's job, and not ours to do) to **"is this data
+matchable at all"** — how many rows carry a GTIN, an MPN, a brand-plus-model, and which
+field it is. That is the question ScrapeMonk is actually accountable for, and it is the
+one the joinability work exists to answer.
 
 Everything mechanical moved to the root README: the MCP-only rule, setup, the ~300-page
 cap and the ninety-minute box, and a section saying plainly that they cannot see the
@@ -130,6 +140,8 @@ too", "say what you matched on". That is the real deliverable and it is in-ficti
 
 - Which did you trust more, the preview or the finished data? Why?
 - What did you have to do outside MCP, and what tool would have saved you?
-- How many products actually matched, and what did you match on? If it was the
-  product name, how confident are you?
+- Could your data be matched by MatchMonk, and how do you know? Which field would it
+  join on, and what share of rows carry it? If the honest answer is "the product name",
+  what happens when that reaches the client demo?
+- Did anyone check joinability *before* exporting, or only after looking at the CSV?
 - Did anyone check the currency before comparing? When did you notice?

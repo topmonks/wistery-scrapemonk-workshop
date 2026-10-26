@@ -1,12 +1,20 @@
 # ScrapeMonk MCP Workshop
 
-Each participant takes one scenario folder. Inside is **a ticket from sales** — the
-kind we actually get: business context, a competitor or two, and a vague-but-real ask.
-Your job is to turn it into data, driving ScrapeMonk entirely through its agent.
+Each participant takes one scenario folder. Inside is **a ticket from our own sales
+team** — a prospect we met at a conference, warmed up over a few calls, who has now
+asked to see a demo built on their real competitors' data. Your job is to produce that
+data, driving ScrapeMonk entirely through its agent.
 
-This is the workflow we are testing, not a tutorial. In real life nobody rewrites the
-sales ticket into technical steps first — they paste it to the agent and start talking.
-Do that.
+**Where ScrapeMonk sits.** The prospect is buying the end of the chain: ScrapeMonk
+gathers, **TidyMonk** cleanses, **MatchMonk** matches products across shops, **PriceMonk**
+turns that into a pricing strategy — which is the part they actually want. ScrapeMonk is
+second fiddle here, and getting the data **into S3** in a usable shape is the whole of
+our contribution. It is also the step that sinks the demo if it goes wrong, because
+nothing downstream can recover data that was never collected or never joinable.
+
+This is the workflow we are testing, not a tutorial. It is also the one we actually run
+every week: the ticket arrives written for humans, nobody rewrites it into technical
+steps first, somebody pastes it to the agent and starts talking. Do that.
 
 **The one rule: drive ScrapeMonk only through MCP.** No web app, no curl, no database.
 Looking at the web app to *check* a result is fine. Doing the work there is not. If
@@ -63,12 +71,14 @@ is the thing that causes damage, so report what you actually have.
 ## Done means
 
 - Both competitor ranges extracted.
-- A CSV of each in S3, produced by ScrapeMonk.
-- You can answer the ticket: how many products, how many priced, and **how many appear
-  on both sides** — stating what you matched them on.
+- A CSV of each **in S3**, produced by ScrapeMonk. That is the handoff to TidyMonk.
+- You can say, per shop: how many products, how many priced, which currency, and —
+  the one that decides the demo — **how many rows carry something MatchMonk could
+  actually join on**, and which field it is.
 
-That last one is the real question, and it is the one sales actually asked. A row with
-a name, a price and a photo reads perfectly and matches nothing.
+You are not matching the products yourself; that is MatchMonk's job. You are answering
+whether it *could*. A row with a name, a price and a photo reads perfectly and matches
+nothing, and that failure only becomes visible two steps later, in front of the client.
 
 ## Afterwards
 

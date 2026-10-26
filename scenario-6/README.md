@@ -1,37 +1,58 @@
-> **Scenario 6 — you work at Northfell Cycles** (Trondheim, NO — suspension, headsets and drivetrain parts).
-> This is the ticket as it landed from sales. Workshop rules and setup are in the
+> **Scenario 6** — you are preparing the demo. Workshop rules and setup are in the
 > [root README](../README.md). Record anything you could not do in `FINDINGS.md`.
 
-# PRICE-2050 — Shimano drivetrain: new versus pre-owned pressure
+# DEMO-2050 — Northfell Cycles: demo data for the Shimano drivetrain comparison
 
-**Raised by** Ingrid (Sales) · **For** Pricing · **Priority** Medium
+**Raised by** Ingrid (Sales) · **For** Delivery · **Demo is Thursday**
 
-## Why I'm asking
+## Who they are
 
-Our workshop customers have started quoting us prices that cannot be new-stock prices,
-and I think we are being compared against two quite different kinds of retailer at once
-without anyone distinguishing between them. One sells new, one sells a lot of
-pre-owned and take-off parts.
+Northfell Cycles are a Trondheim workshop and webshop — suspension, headsets,
+drivetrain. We met them at Core Bike and have had three calls since. They are
+interested but not convinced — they have been pitched competitor monitoring before and
+it came back as a spreadsheet nobody could use.
 
-If we are being benchmarked against used groupsets, that is a conversation I can have
-with the customer. But I need to see it in the data first rather than assert it.
+Customers quote them prices that cannot be new-stock prices. They suspect they are
+being compared against pre-owned and take-off parts but have never been able to show
+it.
 
-## What I need
+## What they asked for
 
-Both retailers' Shimano ranges with prices, matched to our catalogue. And — this is
-the important part — enough detail per row that the pricing team can tell whether a
-cheap line is actually the same product we sell.
+They do not want a slide about what we could do. They asked to see **their own market,
+with real numbers**, using the two competitors they named on the last call. If we can
+show them a like-for-like comparison on a line that actually hurts, we win this.
 
-**Cap it at about 300 products per retailer.** I am trying to understand a pattern,
-not build a catalogue — and if the pattern is real it will show up in the first few
-hundred.
+One of those two sells a lot of pre-owned stock. If the data can make that visible,
+that alone is the demo.
 
-## The two retailers
+## The two sites they named
 
-| | Shop | Their Shimano range |
+| | Shop | Range to pull |
 |---|---|---|
 | **A** | Contender Bicycles | https://contenderbicycles.com/collections/shimano (~174 products) |
 | **B** | The Pro's Closet | https://theproscloset.com/collections/shimano (~273 products) |
 
-A matching product name is not the same thing as a matching product. Please say what
-you matched on.
+## Where this sits
+
+The prospect is buying the end of the pipeline, not our bit. What they want is
+**PriceMonk** telling them where to move their prices. To get there the data goes
+ScrapeMonk → **TidyMonk** to cleanse → **MatchMonk** to match products across the two
+shops → PriceMonk for the strategy.
+
+Our job here is the first step, and the handoff: both ranges extracted and **landed in
+S3** in a shape the rest of the chain can pick up. ScrapeMonk is playing second fiddle
+in this demo and that is fine — but if this step is wrong, nothing downstream recovers.
+
+## What matters about the data
+
+MatchMonk can only join products on something stable — a GTIN or EAN, a manufacturer
+part number, a brand plus a model. Not a product name. So the question to answer before
+Thursday is not "did you get the rows", it is **can these rows actually be matched**:
+how many carry an identifier, and which field is it.
+
+If a large share of the rows have nothing to join on, say so now. That is a far better
+Tuesday conversation than a demo where MatchMonk returns nothing in front of the client.
+
+**Around 300 products from each shop is plenty.** This is a demo, not a delivery. I
+would rather have 300 rows that hold up under questioning than a full dump nobody has
+checked — they *will* ask where a number came from.
