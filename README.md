@@ -9,8 +9,7 @@ data, driving ScrapeMonk entirely through its agent.
 gathers, **TidyMonk** cleanses, **MatchMonk** matches products across shops, **PriceMonk**
 turns that into a pricing strategy — which is the part they actually want. ScrapeMonk is
 second fiddle here, and getting the data **into S3** in a usable shape is the whole of
-our contribution — Barbora takes it from S3 onward on the MatchMonk side. It is also
-the step that sinks the demo if it goes wrong, because nothing downstream can recover
+our contribution. It is also the step that sinks the demo if it goes wrong, because nothing downstream can recover
 data that was never collected or never joinable.
 
 This is the workflow we are testing, not a tutorial. It is also the one we actually run
@@ -54,11 +53,10 @@ state the job is in and what it has reported. If the answer you get is thin, tha
 worth writing down — a tool that cannot tell you why something stalled is a gap, and
 we would rather hear it from you today than from a customer.
 
-## You have about ninety minutes
+## About that 300-product limit
 
-Your ticket asks for roughly **300 products from each shop**. That is a real business
-constraint and it is also all you have time for — both shops are far larger than the
-range you were asked about, and left alone a crawl will happily keep going.
+Your ticket asks for roughly **300 products from each shop**. Both shops are far larger
+than the range you were asked about, and left alone a crawl will happily keep going.
 
 Mind the unit. A crawl is bounded in **pages**, and a page is not a product: listing
 pages, filters and pagination all count toward it. So "300 products" and "300 pages"

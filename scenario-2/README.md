@@ -38,22 +38,19 @@ ScrapeMonk → **TidyMonk** to cleanse → **MatchMonk** to match products acros
 shops → PriceMonk for the strategy.
 
 Our job here is the first step, and the handoff: both ranges extracted and **landed in
-S3**. **Barbora picks it up from there** on the MatchMonk side — the S3 file is where
-our part ends and hers begins, so it needs to be something she can work with rather
-than something she has to come back and ask about.
-
-ScrapeMonk is playing second fiddle in this demo and that is fine — but if this step is
-wrong, nothing downstream recovers.
+S3**, in a shape the MatchMonk side can pick up without coming back to ask. ScrapeMonk
+is playing second fiddle in this demo and that is fine — but if this step is wrong,
+nothing downstream recovers.
 
 ## What matters about the data
 
 MatchMonk can only join products on something stable — a GTIN or EAN, a manufacturer
 part number, a brand plus a model. Not a product name. So the question to answer before
-Thursday is not "did you get the rows", it is **can these rows actually be matched**:
+the demo is not "did you get the rows", it is **can these rows actually be matched**:
 how many carry an identifier, and which field is it.
 
 If a large share of the rows have nothing to join on, say so now. That is a far better
-Tuesday conversation than a demo where MatchMonk returns nothing in front of the client.
+conversation to have with us than with the client, halfway through the demo.
 
 **Around 300 products from each shop is plenty.** This is a demo, not a delivery. I
 would rather have 300 rows that hold up under questioning than a full dump nobody has
