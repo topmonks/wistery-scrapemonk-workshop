@@ -11,14 +11,31 @@ All four are Shopify, chosen by a two-stage check rather than by taste:
    without running this check first.
 2. **A real crawl produced products.** Not a screen, an actual job.
 
-| # | Shop | Seed | cap 40 run → pages / products |
-|---|---|---|---|
-| 1A | Mower Parts Group | `/collections/all` | 112 / **49** |
-| 1B | Lawn Mower Parts World | `/collections/all` | 82 / **44** |
-| 2A | Chainsaw Bars | `/collections/all` | 102 / **41** |
-| 2B | Simply Bearings | site root | 83 / **43** |
+| # | Shop | Seed | cap 40 | cap 300 → pages / products / failed URLs |
+|---|---|---|---|---|
+| 1A | Mower Parts Group | `/collections/all` | 112 / 49 | 327 / **306** / 11 |
+| 1B | Lawn Mower Parts World | `/collections/all` | 82 / 44 | 335 / **307** / 0 |
+| 2A | Chainsaw Bars | `/collections/all` | 102 / 41 | 336 / **313** / 2 |
+| 2B | Simply Bearings | site root | 83 / 43 | 361 / **314** / 0 |
 
-Four of four produced products with **zero failed URLs**. Measured 2026-10-27.
+Four of four, twice, at both caps. Measured 2026-10-27.
+
+## Timing, measured not guessed
+
+**All four jobs at a 300-product cap, in parallel under one platinum account
+(4 concurrent): 26 minutes** wall clock, create → completed.
+
+Participants are on **premium: two concurrent jobs**, which is exactly their two shops,
+and the brief asks for **200**, not 300. Two shops in parallel at 200 should land
+comfortably inside the 26 minutes above — that figure was four jobs contending for the
+same worker pool, and part of it was lost to the browser-slot bug below, now fixed.
+
+Note the page counts: ~330 pages fetched for ~306 products. The cap counts products, so
+a 200-product job will fetch appreciably more than 200 pages. Worth saying out loud if
+anyone is watching the page counter and thinks it has overrun.
+
+A handful of failed URLs is normal and not a problem — 11 on Mower Parts Group, 0 on
+two of the four. The job completes regardless.
 
 ## Why `/collections/all` and not the site root
 
@@ -58,6 +75,28 @@ with nothing in it, that is the shape to recognise, and it should not happen now
 
 Practical consequence: a 200-product cap fetches noticeably more than 200 pages. The
 runs above fetched 82–112 pages for ~40 products.
+
+## Workers release browsers only since 2026-10-27
+
+Fixed in `c4b9196e`. The crawler pool is keyed by job, and a shared worker serves many
+jobs over its life, but pool entries were never dropped when a job *finished* — only on
+recycle, crash or shutdown. Each pooled crawler holds a browser, and a browser holds a
+slot on that worker's browser service until closed, because the lease it renews is what
+stops the service reaping it. `BROWSER_MAX_SERVERS` is 10.
+
+Measured: a worker that had served four finished jobs had **11 Firefox processes**, and
+every new crawl on it then waited the full two-minute capacity window, failed three
+setup attempts, and let its claimed URLs expire back to pending.
+
+**The signature to recognise:** a job sits `in_progress` with 0 pages for many minutes,
+its pending-URL count goes *up* rather than down, and the worker log repeats
+`Browser service at capacity — waiting for a free slot`. If that appears tomorrow,
+the worker is holding browsers from earlier jobs — recycle the workers.
+
+Related: deleting a job leaves `job:state:*` and `queue:*` keys in Redis marked
+`running`, and worker status keys are never cleaned (one on dev had a 7-day-old
+heartbeat still reading `running`). Harmless to crawling — workers only read
+`jobs:active` — but it inflates what the autoscaler thinks is in flight. Not yet fixed.
 
 ## Concurrency
 
